@@ -2,19 +2,19 @@ require("dotenv").config()
 
 module.exports = {
   siteMetadata: {
-    siteTitle: "gatsby-starter-shopify",
-    siteTitleDefault: "gatsby-starter-shopify by @GatsbyJS",
+    siteTitle: "Auto Tool",
+    siteTitleDefault: "Auto Tool",
     siteUrl: "https://shopify-demo.gatsbyjs.com",
-    hrefLang: "en",
-    siteDescription:
-      "A Gatsby starter using the latest Shopify plugin showcasing a store with product overview, individual product pages, and a cart.",
+    hrefLang: "es",
+    siteDescription: "Venta de equipos, herramientas y consumibles para talleres automotrices.",
     siteImage: "/default-og-image.jpg",
-    twitter: "@gatsbyjs",
+    twitter: "@autotool.co",
   },
   flags: {
     FAST_DEV: true,
   },
   plugins: [
+    `gatsby-plugin-emotion`,
     {
       resolve: "gatsby-source-shopify",
       options: {

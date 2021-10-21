@@ -14,11 +14,11 @@ const defaultValues = {
   cart: [],
   isOpen: false,
   loading: false,
-  onOpen: () => {},
-  onClose: () => {},
-  addVariantToCart: () => {},
-  removeLineItem: () => {},
-  updateLineItem: () => {},
+  onOpen: () => { },
+  onClose: () => { },
+  addVariantToCart: () => { },
+  removeLineItem: () => { },
+  updateLineItem: () => { },
   client,
   checkout: {
     lineItems: [],
@@ -62,9 +62,14 @@ export const StoreProvider = ({ children }) => {
           localStorage.setItem(localStorageKey, null)
         }
       }
+      try {
 
-      const newCheckout = await client.checkout.create()
-      setCheckoutItem(newCheckout)
+        const newCheckout = await client.checkout.create()
+        setCheckoutItem(newCheckout)
+      } catch (err) {
+        console.log(err);
+      }
+
     }
 
     initializeCheckout()
@@ -81,7 +86,6 @@ export const StoreProvider = ({ children }) => {
         quantity: parseInt(quantity, 10),
       },
     ]
-
     return client.checkout
       .addLineItems(checkoutID, lineItemsToUpdate)
       .then((res) => {
@@ -89,6 +93,8 @@ export const StoreProvider = ({ children }) => {
         setLoading(false)
         setDidJustAddToCart(true)
         setTimeout(() => setDidJustAddToCart(false), 3000)
+      }).catch(err => {
+        console.log(err);
       })
   }
 

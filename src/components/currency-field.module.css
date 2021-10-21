@@ -4,6 +4,9 @@
   background: none;
   text-align: right;
   padding: var(--space-md);
+  border: 1px solid #000;
+  border-radius: 1rem;
+  outline: none;
 }
 
 .symbolAfter .input {

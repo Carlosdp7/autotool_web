@@ -40,10 +40,10 @@ export function CheckFilter({
       {name && (
         <summary>
           <div className={summary}>
-            {name}{" "}
+            <h3>{name}{" "}</h3>
             {selectedItems.length ? (
               <button className={clearButton} onClick={clearItems}>
-                Clear
+                Limpiar
               </button>
             ) : undefined}
           </div>

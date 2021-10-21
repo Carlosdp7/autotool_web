@@ -13,12 +13,12 @@ export function AddToCart({ variantId, quantity, available, ...props }) {
   return (
     <button
       type="submit"
-      className={addToCartStyle}
+      className={`${addToCartStyle} mt-4`}
       onClick={addToCart}
       disabled={!available || loading}
       {...props}
     >
-      {available ? "Add to Cart" : "Out of Stock"}
+      {available ? "Añadir al carrito" : "No disponible"}
     </button>
   )
 }

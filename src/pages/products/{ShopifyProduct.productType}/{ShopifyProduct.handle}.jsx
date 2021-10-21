@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { Layout } from "../../../components/layout"
 import isEqual from "lodash.isequal"
 import { GatsbyImage, getSrc } from "gatsby-plugin-image"
@@ -8,26 +8,57 @@ import { AddToCart } from "../../../components/add-to-cart"
 import { NumericInput } from "../../../components/numeric-input"
 import { formatPrice } from "../../../utils/format-price"
 import { Seo } from "../../../components/seo"
-import { CgChevronRight as ChevronIcon } from "react-icons/cg"
-import {
-  productBox,
-  container,
-  header,
-  productImageWrapper,
-  productImageList,
-  productImageListItem,
-  scrollForMore,
-  noImagePreview,
-  optionsWrapper,
-  priceValue,
-  selectVariant,
-  labelFont,
-  breadcrumb,
-  tagList,
-  addToCartStyle,
-  metaSection,
-  productDescription,
-} from "./product-page.module.css"
+//Bootrstrap
+import { Container, Row, Col, Carousel } from 'react-bootstrap';
+//CSS
+import styled from '@emotion/styled';
+import { css } from '@emotion/react';
+import { ProductCard } from "../../../components/product-card"
+
+const Section = styled.section`
+  padding:4rem 0 6rem 0;
+  background-color: #fff;
+`;
+
+const Heading1 = styled.h1`
+  font-size: 2rem;
+  font-weight: 700 !important;
+  color:#181818;
+
+  @media(min-width: 576px){
+    font-size: 2.5rem;
+  }
+`;
+
+const Heading2 = styled.h2`
+  font-size: 1.7rem;
+  font-weight: 700 !important;
+  color:#181818;
+
+  @media(min-width: 576px){
+    font-size: 2.3rem;
+  }
+`;
+
+const Heading3 = styled.h3`
+  font-size: 1.9rem;
+  font-weight: 700 !important;
+  color:#181818;
+
+  @media(min-width: 576px){
+    font-size: 2.4rem;
+  }
+`;
+
+const Description = styled.p`
+  font-size: 1.2rem;
+  color:#181818;
+  line-height: 1.8;
+
+  @media(min-width: 576px){
+    font-size: 1.5rem;
+  }
+`;
 
 export default function Product({ data: { product, suggestions } }) {
   const {
@@ -100,10 +131,9 @@ export default function Product({ data: { product, suggestions } }) {
 
   const hasVariants = variants.length > 1
   const hasImages = images.length > 0
-  const hasMultipleImages = true || images.length > 1
 
   return (
-    <Layout>
+    <Layout headerNavBg={true}>
       {firstImage ? (
         <Seo
           title={title}
@@ -111,75 +141,43 @@ export default function Product({ data: { product, suggestions } }) {
           image={getSrc(firstImage.gatsbyImageData)}
         />
       ) : undefined}
-      <div className={container}>
-        <div className={productBox}>
-          {hasImages && (
-            <div className={productImageWrapper}>
-              <div
-                role="group"
-                aria-label="gallery"
-                aria-describedby="instructions"
-              >
-                <ul className={productImageList}>
-                  {images.map((image, index) => (
-                    <li
-                      key={`product-image-${image.id}`}
-                      className={productImageListItem}
-                    >
-                      <GatsbyImage
-                        objectFit="contain"
-                        loading={index === 0 ? "eager" : "lazy"}
-                        alt={
-                          image.altText
-                            ? image.altText
-                            : `Product Image of ${title} #${index + 1}`
-                        }
-                        image={image.gatsbyImageData}
+      <Section>
+        <Container>
+          <Row className="gx-0 gx-lg-5">
+            <Col lg={12} className="mb-5">
+              <Heading1 className="mb-2">{title}</Heading1>
+              <Heading2>{price}</Heading2>
+            </Col>
+            <Col lg={7}>
+              <Carousel controls={false} indicators={false} interval={null}>
+                {hasImages ? (images.map((image, index) => (
+                  <Carousel.Item className="border text-center" key={index}>
+                    <GatsbyImage
+                      objectFit="contain"
+                      loading={index === 0 ? "eager" : "lazy"}
+                      alt={
+                        image.altText
+                          ? image.altText
+                          : `Imagen del producto ${title} #${index + 1}`
+                      }
+                      image={image.gatsbyImageData}
+                    />
+                  </Carousel.Item>
+                ))) : (
+                  <Carousel.Item className="border text-center">
+                    <div>
+                      <img
+                        alt={`Imagen por defecto de un producto`}
+                        src="/"
                       />
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              {hasMultipleImages && (
-                <div className={scrollForMore} id="instructions">
-                  <span aria-hidden="true">←</span> scroll for more{" "}
-                  <span aria-hidden="true">→</span>
-                </div>
-              )}
-            </div>
-          )}
-          {!hasImages && (
-            <span className={noImagePreview}>No Preview image</span>
-          )}
-          <div>
-            <div className={breadcrumb}>
-              <Link to={product.productTypeSlug}>{product.productType}</Link>
-              <ChevronIcon size={12} />
-            </div>
-            <h1 className={header}>{title}</h1>
-            <p className={productDescription}>{description}</p>
-            <h2 className={priceValue}>
-              <span>{price}</span>
-            </h2>
-            <fieldset className={optionsWrapper}>
-              {hasVariants &&
-                options.map(({ id, name, values }, index) => (
-                  <div className={selectVariant} key={id}>
-                    <select
-                      aria-label="Variants"
-                      onChange={(event) => handleOptionChange(index, event)}
-                    >
-                      <option value="">{`Select ${name}`}</option>
-                      {values.map((value) => (
-                        <option value={value} key={`${name}-${value}`}>
-                          {value}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
-                ))}
-            </fieldset>
-            <div className={addToCartStyle}>
+                    </div>
+                  </Carousel.Item>
+                )}
+              </Carousel>
+            </Col>
+            <Col lg={5} className="mt-5 mt-lg-0">
+              <Heading3>Descripción</Heading3>
+              <Description className="mt-3 mb-4">{description}</Description>
               <NumericInput
                 aria-label="Quantity"
                 onIncrement={() => setQuantity((q) => Math.min(q + 1, 20))}
@@ -189,27 +187,31 @@ export default function Product({ data: { product, suggestions } }) {
                 min="1"
                 max="20"
               />
+
               <AddToCart
                 variantId={productVariant.storefrontId}
                 quantity={quantity}
                 available={available}
               />
-            </div>
-            <div className={metaSection}>
-              <span className={labelFont}>Type</span>
-              <span className={tagList}>
-                <Link to={product.productTypeSlug}>{product.productType}</Link>
-              </span>
-              <span className={labelFont}>Tags</span>
-              <span className={tagList}>
-                {product.tags.map((tag) => (
-                  <Link to={`/search?t=${tag}`}>{tag}</Link>
-                ))}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+            </Col>
+          </Row>
+          {suggestions.nodes.length !== 0 && (
+            <Row css={css`padding-top:10rem;`}>
+              <Col lg={12} className="mb-4">
+                <Heading2 css={css`font-size:2.5rem;`}>Similar</Heading2>
+              </Col>
+              {suggestions.nodes.map((p, index) => (
+                <Col xs="auto" sm={6} lg={4}>
+                  <ProductCard
+                    eager={index === 0}
+                    product={p}
+                  />
+                </Col>
+              ))}
+            </Row>
+          )}
+        </Container>
+      </Section>
     </Layout>
   )
 }
@@ -257,7 +259,7 @@ export const query = graphql`
       }
     }
     suggestions: allShopifyProduct(
-      limit: 3
+      limit: 4
       filter: { productType: { eq: $productType }, id: { ne: $id } }
     ) {
       nodes {

@@ -11,6 +11,7 @@ import {
   productVendorStyle,
   productPrice,
 } from "./product-card.module.css"
+import { css } from "@emotion/react"
 
 export function ProductCard({ product, eager }) {
   const {
@@ -31,7 +32,7 @@ export function ProductCard({ product, eager }) {
   const defaultImageWidth = 200
   let storefrontImageData = {}
   if (storefrontImages) {
-    const storefrontImage = storefrontImages.edges[0].node
+    const storefrontImage = storefrontImages.edges[0]?.node
     try {
       storefrontImageData = getShopifyImage({
         image: storefrontImage,
@@ -62,7 +63,11 @@ export function ProductCard({ product, eager }) {
             />
           </div>
         ) : (
-          <div style={{ height: defaultImageHeight, width: defaultImageWidth }} />
+          <div className="d-flex w-100 justify-content-center">
+            <div style={{ height: defaultImageHeight, width: defaultImageWidth }} css={css`text-align:center; font-size: 100px;color:#181818;background-color: #eeee;line-height: 200px;font-weight:bold;`} >
+              ?
+            </div>
+          </div>
         )
       }
       <div className={productDetailsStyle}>

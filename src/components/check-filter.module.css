@@ -2,10 +2,15 @@
   display: flex;
 }
 
+.filter h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
 .filter label {
   cursor: pointer;
   margin-top: 6px;
-  color: var(--text-color-secondary);
+  color: #181818;
   display: flex;
   align-items: baseline;
   line-height: var(--loose);
@@ -17,13 +22,11 @@
 }
 
 .filter label.selectedLabel {
-  font-weight: var(--semibold);
   color: var(--text-color);
 }
 
 .filter summary {
   font-weight: var(--bold);
-  text-transform: uppercase;
   cursor: pointer;
   font-size: var(--text-xs);
   letter-spacing: var(--tracked);
@@ -37,7 +40,8 @@
 }
 
 .filter summary::-webkit-details-marker {
-  display: none; /* hide the summary arrow on safari */
+  display: none;
+  /* hide the summary arrow on safari */
 }
 
 .summary {
@@ -88,8 +92,8 @@
 }
 
 .checkbox:checked {
-  border-color: var(--primary);
-  background-color: var(--primary);
+  border-color: #1352FF;
+  background-color: #1352FF;
 }
 
 .checkbox::before {

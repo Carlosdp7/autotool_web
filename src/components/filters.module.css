@@ -11,10 +11,14 @@
   margin-top: 2px;
 }
 
+.priceFilterStyle h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
 .priceFilterStyle .summary {
   cursor: pointer;
   font-weight: var(--bold);
-  text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -29,7 +33,8 @@
 }
 
 .priceFilterStyle summary::-webkit-details-marker {
-  display: none; /* hide the summary arrow on safari */
+  display: none;
+  /* hide the summary arrow on safari */
 }
 
 .priceFilterStyle summary {

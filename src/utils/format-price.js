@@ -4,12 +4,13 @@
  * @param {number} value The amount to format
  * @returns
  */
-export const formatPrice = (currency, value) =>
-  Intl.NumberFormat("en-US", {
+export const formatPrice = (currency, value) => {
+  return Intl.NumberFormat("en-US", {
     currency,
     minimumFractionDigits: 2,
     style: "currency",
   }).format(value)
+}
 
 export const getCurrencySymbol = (currency, locale = undefined) => {
   if (!currency) {

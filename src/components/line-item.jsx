@@ -12,9 +12,10 @@ import {
   variant,
   totals,
   priceColumn,
-} from "./line-item.module.css"
+} from "./line-item.module.css";
+import { css } from '@emotion/react';
 
-export function LineItem({ item }) {
+export function LineItem({ item, index, itemsLength }) {
   const {
     removeLineItem,
     checkout,
@@ -81,9 +82,10 @@ export function LineItem({ item }) {
 
   return (
     <tr>
-      <td>
+      <td css={css`margin-bottom: ${(index + 1) === itemsLength ? '0rem' : '3rem'};`}>
         {image && (
           <GatsbyImage
+            className="border"
             key={variantImage.src}
             image={image}
             alt={variantImage.altText ?? item.variant.title}
@@ -97,20 +99,22 @@ export function LineItem({ item }) {
         </div>
         <div className={remove}>
           <button onClick={handleRemove}>
-            <DeleteIcon /> Remove
+            <DeleteIcon /> Eliminar
           </button>
         </div>
       </td>
       <td className={priceColumn}>{price}</td>
       <td>
-        <NumericInput
-          disabled={loading}
-          value={quantity}
-          aria-label="Quantity"
-          onIncrement={doIncrement}
-          onDecrement={doDecrement}
-          onChange={(e) => handleQuantityChange(e.currentTarget.value)}
-        />
+        <div className="w-100 d-flex justify-content-center">
+          <NumericInput
+            disabled={loading}
+            value={quantity}
+            aria-label="Quantity"
+            onIncrement={doIncrement}
+            onDecrement={doDecrement}
+            onChange={(e) => handleQuantityChange(e.currentTarget.value)}
+          />
+        </div>
       </td>
       <td className={totals}>{subtotal}</td>
     </tr>

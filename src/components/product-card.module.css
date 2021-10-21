@@ -5,6 +5,10 @@
   padding-bottom: var(--space-md);
 }
 
+.productCardStyle:hover {
+  color: #181818;
+}
+
 .productImageStyle {
   margin-bottom: var(--space-md);
 }
@@ -18,8 +22,10 @@
 }
 
 .productVendorStyle {
-  font-size: var(--text-sm);
-  color: var(--text-color-secondary);
+  font-weight: 400;
+  font-family: 'Urbanist';
+  font-size: var(--text-md);
+  color: #181818;
 }
 
 .productHeadingStyle {
@@ -29,8 +35,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   line-height: var(--dense);
+  font-weight: 600 !important;
+  color: #181818;
 }
 
 .productPrice {
-  color: var(--text-color-secondary);
+  font-weight: 400;
+  font-family: 'Urbanist';
+  font-size: var(--text-lg);
+  color: #181818;
 }

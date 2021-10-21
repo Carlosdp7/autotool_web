@@ -1,4 +1,3 @@
-// @ts-check
 import * as React from "react"
 import {
   input,
@@ -12,6 +11,7 @@ export function CurrencyField({
   symbolAtEnd,
   style,
   className,
+  name,
   ...props
 }) {
   return (
@@ -25,6 +25,7 @@ export function CurrencyField({
       <input
         type="numeric"
         className={input}
+        placeholder={name}
         data-currency={symbol}
         {...props}
       />

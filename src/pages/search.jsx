@@ -36,7 +36,10 @@ import {
   modalOpen,
   activeFilters,
   filterWrap,
-} from "./search-page.module.css"
+} from "./search-page.module.css";
+
+import { css } from "@emotion/react"
+import { Container, Row, Col } from "react-bootstrap"
 
 export const query = graphql`
   query {
@@ -156,110 +159,117 @@ function SearchPage({
   )
 
   return (
-    <Layout>
-      <h1 className={visuallyHidden}>Search Results</h1>
-      <div className={main}>
-        <div className={search} aria-hidden={modalOpen}>
-          <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
-          <button
-            className={[
-              filterButton,
-              filterCount ? activeFilters : undefined,
-            ].join(" ")}
-            onClick={() => setShowModal((show) => !show)}
-            // This is hidden because the filters are already visible to
-            // screenreaders, so the modal isnt needed.
-            aria-hidden
-          >
-            <FilterIcon />
-          </button>
-          <div className={sortSelector}>
-            <label>
-              <span>Sort by:</span>
-              <select
-                value={sortKey}
-                // eslint-disable-next-line
-                onChange={(e) => setSortKey(e.target.value)}
-              >
-                <option value="RELEVANCE">Relevance</option>
-                <option value="PRICE">Price</option>
-                <option value="TITLE">Title</option>
-                <option value="CREATED_AT">New items</option>
-                <option value="BEST_SELLING">Trending</option>
-              </select>
-            </label>
-            <SortIcon className={sortIcon} />
-          </div>
-        </div>
-        <section className={[filterStyle, showModal && modalOpen].join(" ")}>
-          <div className={filterTitle}>
-            <h2>Filter</h2>
-            <button aria-hidden onClick={() => setShowModal(false)}>
-              <CrossIcon />
-            </button>
-          </div>
-          <div className={filterWrap}>
-            <Filters
-              setFilters={setFilters}
-              filters={filters}
-              tags={tags}
-              vendors={vendors}
-              productTypes={productTypes}
-              currencyCode={currencyCode}
-            />
-          </div>
-        </section>
-        <section
-          className={results}
-          aria-busy={isFetching}
-          aria-hidden={modalOpen}
-        >
-          {isFetching ? (
-            <p className={progressStyle}>
-              <Spinner aria-valuetext="Searching" /> Searching
-              {filters.term ? ` for "${filters.term}"…` : `…`}
-            </p>
-          ) : (
-            <p className={resultsStyle}>
-              Search results{" "}
-              {filters.term && (
-                <>
-                  for "<span>{filters.term}</span>"
-                </>
-              )}
-            </p>
-          )}
-          <ul className={productListStyle}>
-            {!isFetching &&
-              productList.map(({ node }, index) => (
-                <li className={productListItem} key={node.id}>
-                  <ProductCard
-                    eager={index === 0}
-                    product={{
-                      title: node.title,
-                      priceRangeV2: node.priceRangeV2,
-                      slug: `/products/${slugify(node.productType)}/${
-                        node.handle
-                      }`,
-                      // The search API and Gatsby data layer have slightly different images available.
-                      images: isDefault ? node.images : [],
-                      storefrontImages: !isDefault && node.images,
-                      vendor: node.vendor,
-                    }}
-                  />
-                </li>
-              ))}
-          </ul>
-          {hasPreviousPage || hasNextPage ? (
-            <Pagination
-              previousPage={fetchPreviousPage}
-              hasPreviousPage={hasPreviousPage}
-              nextPage={fetchNextPage}
-              hasNextPage={hasNextPage}
-            />
-          ) : undefined}
-        </section>
-      </div>
+    <Layout headerNavBg={true}>
+      <section css={css`background-color:#fff !important;padding:3rem 0 5rem 0;color:#181818 !important;`}>
+        <Container>
+          <Row>
+            <Col xs={12}>
+              <h1 className={visuallyHidden}>Resultados de búsqueda</h1>
+              <div className={main}>
+                <div className={search} aria-hidden={modalOpen}>
+                  <SearchBar defaultTerm={filters.term} setFilters={setFilters} />
+                  <button
+                    className={[
+                      filterButton,
+                      filterCount ? activeFilters : undefined,
+                    ].join(" ")}
+                    onClick={() => setShowModal((show) => !show)}
+                    // This is hidden because the filters are already visible to
+                    // screenreaders, so the modal isnt needed.
+                    aria-hidden
+                  >
+                    <FilterIcon />
+                  </button>
+                  <div className={sortSelector}>
+                    <label>
+                      <span>Ordenar por:</span>
+                      <select
+                        value={sortKey}
+                        // eslint-disable-next-line
+                        onChange={(e) => setSortKey(e.target.value)}
+                      >
+                        <option value="RELEVANCE">Relevancia</option>
+                        <option value="PRICE">Precio</option>
+                        <option value="TITLE">Título</option>
+                        <option value="CREATED_AT">Nuevos Productos</option>
+                        <option value="BEST_SELLING">Trending</option>
+                      </select>
+                    </label>
+                    <SortIcon className={sortIcon} />
+                  </div>
+                </div>
+                <section className={[filterStyle, showModal && modalOpen].join(" ")}>
+                  <div className={filterTitle}>
+                    <h2>Filtrar</h2>
+                    <button aria-hidden onClick={() => setShowModal(false)}>
+                      <CrossIcon />
+                    </button>
+                  </div>
+                  <div className={filterWrap}>
+                    <Filters
+                      setFilters={setFilters}
+                      filters={filters}
+                      tags={tags}
+                      vendors={vendors}
+                      productTypes={productTypes}
+                      currencyCode={currencyCode}
+                    />
+                  </div>
+                </section>
+                <section
+                  className={results}
+                  aria-busy={isFetching}
+                  aria-hidden={modalOpen}
+                >
+                  {isFetching ? (
+                    <p className={progressStyle}>
+                      <Spinner aria-valuetext="Buscando" /> Buscando
+                      {filters.term ? ` for "${filters.term}"…` : `…`}
+                    </p>
+                  ) : (
+                    <p className={resultsStyle}>
+                      Resultados de búsqueda{" "}
+                      {filters.term && (
+                        <>
+                          for "<span>{filters.term}</span>"
+                        </>
+                      )}
+                    </p>
+                  )}
+                  <ul className={productListStyle}>
+                    {!isFetching &&
+                      productList.map(({ node }, index) => (
+                        <li className={productListItem} key={node.id}>
+                          <ProductCard
+                            eager={index === 0}
+                            product={{
+                              title: node.title,
+                              priceRangeV2: node.priceRangeV2,
+                              slug: `/products/${slugify(node.productType)}/${node.handle
+                                }`,
+                              // The search API and Gatsby data layer have slightly different images available.
+                              images: isDefault ? node.images : [],
+                              storefrontImages: !isDefault && node.images,
+                              vendor: node.vendor,
+                            }}
+                          />
+                        </li>
+                      ))}
+                  </ul>
+                  {hasPreviousPage || hasNextPage ? (
+                    <Pagination
+                      previousPage={fetchPreviousPage}
+                      hasPreviousPage={hasPreviousPage}
+                      nextPage={fetchNextPage}
+                      hasNextPage={hasNextPage}
+                    />
+                  ) : undefined}
+                </section>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
     </Layout>
   )
 }
@@ -275,7 +285,7 @@ function SearchBar({ defaultTerm, setFilters }) {
 
   return (
     <form onSubmit={(e) => e.preventDefault()} className={searchForm}>
-      <SearchIcon aria-hidden className={searchIcon} />
+      <img src="/search.svg" aria-hidden className={searchIcon} />
       <input
         type="text"
         value={term}
@@ -283,7 +293,7 @@ function SearchBar({ defaultTerm, setFilters }) {
           setTerm(e.target.value)
           debouncedSetFilters(e.target.value)
         }}
-        placeholder="Search..."
+        placeholder="Buscar resultados"
       />
       {term ? (
         <button
@@ -293,7 +303,7 @@ function SearchBar({ defaultTerm, setFilters }) {
             setTerm("")
             setFilters((filters) => ({ ...filters, term: "" }))
           }}
-          aria-label="Clear search query"
+          aria-label="limpiar búsqueda"
         >
           <CrossIcon />
         </button>

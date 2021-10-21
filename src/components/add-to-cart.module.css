@@ -1,18 +1,15 @@
 .addToCart {
-  display: flex;
-  flex-direction: row;
-  color: var(--text-color-inverted);
-  background-color: var(--primary);
-  align-self: flex-end;
-  padding: var(--space-sm) var(--space-xl);
-  border-radius: var(--radius-md);
-  font-weight: var(--bold);
-  align-items: center;
-  height: var(--size-input);
-  justify-content: center;
+  display: block;
+  width: 100%;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #181818;
+  padding: 2rem 0;
+  font-weight: 700;
   transition: var(--transition);
+  font-size: 1.3rem;
 }
 
 .addToCart:hover {
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 12px #1818184b;
 }

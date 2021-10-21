@@ -1,10 +1,9 @@
 .wrap {
   display: inline-grid;
   grid-template-columns: 1fr min-content;
-  grid-template-areas: "input increment" "input decrement";
-  background-color: var(--input-background);
-  border-radius: var(--radius-md);
-  height: var(--size-input);
+  grid-template-areas: "input increment""input decrement";
+  border: 1px solid #181818;
+  height: 2.5rem;
   overflow: hidden;
 }
 
@@ -18,12 +17,14 @@
   border: none;
   padding: var(--space-sm) var(--space-lg);
   align-self: stretch;
-  width: 6ch;
+  width: 5ch;
   border-style: solid;
-  border-color: var(--input-border);
   border-width: 0 1px 0 0;
   font-weight: var(--medium);
-  color: var(--input-text);
+  color: #181818;
+  outline: none;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .input:disabled {
@@ -36,12 +37,11 @@
   padding: 0 var(--space-sm);
   display: grid;
   place-items: center;
-  color: var(--input-ui);
+  color: #181818;
 }
 
 .wrap button:hover {
-  background-color: var(--input-background-hover);
-  color: var(--input-ui-active);
+  color: #181818b0;
 }
 
 .wrap button:disabled:hover,
@@ -91,12 +91,6 @@
   }
 
   .wrap button:active {
-    background-color: var(--input-background-hover);
-    color: var(--input-ui-active);
-  }
-
-  .wrap button:hover {
-    background-color: inherit;
-    color: inherit;
+    color: #181818b0;
   }
 }

@@ -74,7 +74,7 @@
   --text-prose: var(--text-md);
 
   /* input */
-  --input-background: var(--black-fade-5);
+  --input-background: none;
   --input-background-hover: var(--black-fade-5);
   --input-border: var(--black-fade-5);
   --input-text: var(--text-color);
