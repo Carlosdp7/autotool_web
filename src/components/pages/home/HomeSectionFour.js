@@ -78,7 +78,7 @@ const HomeSectionFour = () => {
               </div>
               <div css={css`margin-top: -10px;`}>
                 <Text className="mb-1">autotool.co@gmail.com</Text>
-                <LinkTo href="#">enviar email</LinkTo>
+                <LinkTo href="mailto:autotool.co@gmail.com">enviar email</LinkTo>
               </div>
             </div>
             <div className="w-100 d-flex mb-5">
@@ -87,7 +87,7 @@ const HomeSectionFour = () => {
               </div>
               <div>
                 <Text className="mb-1">+57 324 289 2433</Text>
-                <LinkTo href="#">enviar mensaje</LinkTo>
+                <LinkTo href="https://wa.me/573242892433" target="_blank" rel="noopener noreferrer">enviar mensaje</LinkTo>
               </div>
             </div>
             <div className="w-100 d-flex mb-5">
@@ -96,7 +96,7 @@ const HomeSectionFour = () => {
               </div>
               <div css={css`margin-top: -10px;`}>
                 <Text className="mb-1">@autotool.co</Text>
-                <LinkTo href="#">seguir</LinkTo>
+                <LinkTo href="https://www.instagram.com/autotool.co" target="_blank" rel="noopener noreferrer">seguir</LinkTo>
               </div>
             </div>
           </Col>

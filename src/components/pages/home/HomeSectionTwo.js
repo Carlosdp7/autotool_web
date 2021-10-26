@@ -75,7 +75,7 @@ const HomeSectionTwo = () => {
           <Col lg={6}>
             <TextAboveTitle>Quienes Somos</TextAboveTitle>
             <Heading2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Heading2>
-            <LinkTo to="/">Leer más <span className="ms-4">&gt;</span></LinkTo>
+            <LinkTo to="/nosotros/">Leer más <span className="ms-4">&gt;</span></LinkTo>
           </Col>
           <Col lg={6}>
             <PrimaryText>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim</PrimaryText>

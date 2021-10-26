@@ -46,8 +46,8 @@ export function Footer() {
         <Container>
           <Row>
             <Col md={4} lg={6} className="mb-md-0 text-center text-md-start">
-              <h4 className="mb-3" css={css`font-size:2.4rem;`}>Visítanos</h4>
-              <p css={css`font-size:1.3rem;margin-bottom:1rem;`}>Calle 140 , Cedritos <br /> Bogota - Colombia </p>
+              <h4 className="mb-3" css={css`font-size:2.4rem;`}>Contáctanos</h4>
+              {/* <p css={css`font-size:1.3rem;margin-bottom:1rem;`}>Calle 140 , Cedritos <br /> Bogota - Colombia </p> */}
               <p css={css`font-size:1.3rem;margin-bottom:1rem;`}>+57 324 289 2433</p>
               <p css={css`font-size:1.3rem;margin-bottom:1rem;`}>autotool.co@gmail.com</p>
             </Col>

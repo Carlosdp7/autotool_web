@@ -104,7 +104,7 @@ const ContactSectionOne = () => {
                     <img src="/email-card-icon-black.svg" alt="icono carta de email negro" />
                   </div>
                   <Text>autotool.co@gmail.com</Text>
-                  <LinkTo href="#">enviar email</LinkTo>
+                  <LinkTo href="mailto:autotool.co@gmail.com">enviar email</LinkTo>
                 </Card>
               </Col>
               <Col lg={6} xl={4} className="mb-5">
@@ -113,7 +113,7 @@ const ContactSectionOne = () => {
                     <img src="/whatsapp-icon-black.svg" alt="icono whatsapp negro" />
                   </div>
                   <Text>+57 324 289 2433</Text>
-                  <LinkTo href="#">enviar mensaje</LinkTo>
+                  <LinkTo href="https://wa.me/573242892433" target="_blank" rel="noopener noreferrer">enviar mensaje</LinkTo>
                 </Card>
               </Col>
               <Col lg={6} xl={4} className="mb-5">
@@ -122,7 +122,7 @@ const ContactSectionOne = () => {
                     <img src="/instagram-icon-black.svg" alt="icono instagram negro" />
                   </div>
                   <Text>@autotool.co</Text>
-                  <LinkTo href="#">seguir</LinkTo>
+                  <LinkTo href="https://www.instagram.com/autotool.co" target="_blank" rel="noopener noreferrer">seguir</LinkTo>
                 </Card>
               </Col>
             </Row>

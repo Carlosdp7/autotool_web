@@ -97,9 +97,11 @@ const HomerHero = () => {
                     Comprar ahora
                   </BlueButton>
                 </Link>
-                <TransparentButton>
-                  Explorar
-                </TransparentButton>
+                <Link to="/servicios/">
+                  <TransparentButton>
+                    Explorar
+                  </TransparentButton>
+                </Link>
               </div>
             </div>
           </Col>
