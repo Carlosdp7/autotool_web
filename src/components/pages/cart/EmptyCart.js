@@ -5,7 +5,6 @@ import { Link } from 'gatsby';
 import { Row, Col } from 'react-bootstrap';
 //CSS
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 
 const Heading1 = styled.h1`
   font-size: 3.5rem;
@@ -48,7 +47,7 @@ const EmptyCart = () => {
         </div>
         <Heading1>Tu carrito se encuentra vacío</Heading1>
         <Text className="mb-4">Parece que no has encontrado algun producto aún. </Text>
-        <LinkTo to="/search?s=BEST_SELLING">Mostrar el catalogo</LinkTo>
+        <LinkTo to="/productos?s=BEST_SELLING">Mostrar el catalogo</LinkTo>
       </Col>
     </Row>
   );

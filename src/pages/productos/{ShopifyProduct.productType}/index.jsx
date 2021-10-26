@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import { Layout } from "../../../components/layout"
 import { ProductListing } from "../../../components/product-listing"
 import { Seo } from "../../../components/seo"
-import slugify from "@sindresorhus/slugify"
 import { MoreButton } from "../../../components/more-button"
 //Bootrstrap
 import { Container, Row, Col } from 'react-bootstrap';
@@ -39,7 +38,7 @@ export default function ProductTypeIndex({
             <Col lg={12}>
               <Heading1>{productType}</Heading1>
               <ProductListing products={products.nodes} />
-              <MoreButton to="/search/">
+              <MoreButton to="/productos">
                 Más Productos
               </MoreButton>
             </Col>

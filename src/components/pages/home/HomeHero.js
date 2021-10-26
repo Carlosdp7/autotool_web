@@ -92,7 +92,7 @@ const HomerHero = () => {
               <Heading1>Lorem ipsum dolor sit amet</Heading1>
               <Subtitle className="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</Subtitle>
               <div>
-                <Link to="/search">
+                <Link to="/productos">
                   <BlueButton type="button" className="me-5">
                     Comprar ahora
                   </BlueButton>
@@ -116,7 +116,7 @@ const HomerHero = () => {
             <Heading1>Lorem ipsum dolor sit amet</Heading1>
             <Subtitle className="mb-4 mb-sm-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</Subtitle>
             <div>
-              <Link to="/search">
+              <Link to="/productos">
                 <BlueButton type="button" className="me-5 mb-3 mb-sm-0">
                   Comprar ahora
                 </BlueButton>

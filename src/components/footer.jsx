@@ -6,18 +6,8 @@ import { Container, Row, Col } from 'react-bootstrap';
 //CSS
 import { css } from "@emotion/react";
 import styled from '@emotion/styled';
-import {
-  footerStyle,
-  copyright,
-  links,
-  blurb,
-  logos,
-  footerNavList,
-  footerNavListItem,
-} from "./footer.module.css"
 //Context
 //Images
-import Logo from "../icons/logo"
 
 const LinkTo = styled(Link)`
   font-size: 1.3rem;
@@ -51,42 +41,6 @@ const BoldText = styled.p`
 
 export function Footer() {
   return (
-    // <footer className={footerStyle}>
-    //   <div className={blurb}>
-    //     <div className={logos}>
-    //       <Logo />
-    //     </div>
-    //     <strong>gatsby-starter-shopify</strong> change this by editing{" "}
-    //     <code>src/components/footer.jsx</code>
-    //   </div>
-    //   <nav className={links} aria-label="footer">
-    //     <ul className={footerNavList}>
-    //       <li className={footerNavListItem}>
-    //         <a href="https://github.com/gatsbyjs/gatsby-starter-shopify">
-    //           Source Code and Docs
-    //         </a>
-    //       </li>
-    //       <li className={footerNavListItem}>
-    //         <a href="https://www.gatsbyjs.com/cloud/">About Gatsby Cloud</a>
-    //       </li>
-    //       {process.env.GATSBY_DEMO_STORE === "true" && (
-    //         <li className={footerNavListItem}>
-    //           <a href="https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-shopify&utm_campaign=shopify-starter">
-    //             <img
-    //               src="https://www.gatsbyjs.com/deploynow.png"
-    //               alt="Deploy to Gatsby Cloud"
-    //               height="38"
-    //               width="251"
-    //             />
-    //           </a>
-    //         </li>
-    //       )}
-    //     </ul>
-    //   </nav>
-    //   <div className={copyright}>
-    //     Copyright &copy; {new Date().getFullYear()} · All rights reserved
-    //   </div>
-    // </footer>
     <footer>
       <section css={css`background-color: #181818;padding: 4rem 0rem;`}>
         <Container>
@@ -99,14 +53,14 @@ export function Footer() {
             </Col>
             <Col md={4} lg={2} className="text-center text-lg-start">
               <h4 className="mb-4"><BorderBottom>Inicio</BorderBottom></h4>
-              <LinkTo to="/servicios">Servicios</LinkTo>
-              <LinkTo to="/contacto">Contacto</LinkTo>
+              <LinkTo to="/servicios/">Servicios</LinkTo>
+              <LinkTo to="/contacto/">Contacto</LinkTo>
             </Col>
             <Col md={4} lg={3} className="text-center text-lg-start">
               <h4 className="mb-4"><BorderBottom>Nosotros</BorderBottom></h4>
-              <LinkTo to="/nosotros">Nosotros</LinkTo>
-              <LinkTo to="/politicas-privacidad">Politicas de Privacidad</LinkTo>
-              <LinkTo to="/terminos-condiciones">Terminos y Condiciones</LinkTo>
+              <LinkTo to="/nosotros/">Nosotros</LinkTo>
+              <LinkTo to="/politicas-privacidad/">Politicas de Privacidad</LinkTo>
+              <LinkTo to="/terminos-condiciones/">Terminos y Condiciones</LinkTo>
             </Col>
           </Row>
         </Container>
