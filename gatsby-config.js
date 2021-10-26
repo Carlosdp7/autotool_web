@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     siteTitle: "Auto Tool",
     siteTitleDefault: "Auto Tool",
-    siteUrl: "https://shopify-demo.gatsbyjs.com",
+    siteUrl: "https://autotool.com.co",
     hrefLang: "es",
     siteDescription: "Venta de equipos, herramientas y consumibles para talleres automotrices.",
     siteImage: "/default-og-image.jpg",

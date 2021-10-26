@@ -5,22 +5,47 @@ import { ProductListing } from "../../../components/product-listing"
 import { Seo } from "../../../components/seo"
 import slugify from "@sindresorhus/slugify"
 import { MoreButton } from "../../../components/more-button"
-import { title } from "../index.module.css"
+//Bootrstrap
+import { Container, Row, Col } from 'react-bootstrap';
+//CSS
+import styled from '@emotion/styled';
+
+const Section = styled.section`
+  padding:4rem 0 6rem 0;
+  background-color: #fff;
+`;
+
+const Heading1 = styled.h1`
+  font-size: 2rem;
+  font-weight: 700 !important;
+  color:#181818;
+  margin-bottom: 2rem;
+
+  @media(min-width: 576px){
+    font-size: 2.5rem;
+  }
+`;
 
 export default function ProductTypeIndex({
   data: { products },
   pageContext: { productType },
 }) {
   return (
-    <Layout>
+    <Layout headerNavBg={true}>
       <Seo title={`Category: ${productType}`} />
-      <h1 className={title}>{productType}</h1>
-      <ProductListing products={products.nodes} />
-      {products.pageInfo.hasNextPage && (
-        <MoreButton to={`/search?p=${slugify(productType)}#more`}>
-          More Products
-        </MoreButton>
-      )}
+      <Section>
+        <Container>
+          <Row>
+            <Col lg={12}>
+              <Heading1>{productType}</Heading1>
+              <ProductListing products={products.nodes} />
+              <MoreButton to="/search/">
+                Más Productos
+              </MoreButton>
+            </Col>
+          </Row>
+        </Container>
+      </Section>
     </Layout>
   )
 }

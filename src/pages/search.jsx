@@ -192,7 +192,7 @@ function SearchPage({
                         <option value="PRICE">Precio</option>
                         <option value="TITLE">Título</option>
                         <option value="CREATED_AT">Nuevos Productos</option>
-                        <option value="BEST_SELLING">Trending</option>
+                        <option value="BEST_SELLING">Populares</option>
                       </select>
                     </label>
                     <SortIcon className={sortIcon} />
@@ -245,7 +245,7 @@ function SearchPage({
                             product={{
                               title: node.title,
                               priceRangeV2: node.priceRangeV2,
-                              slug: `/products/${slugify(node.productType)}/${node.handle
+                              slug: `/productos/${slugify(node.productType)}/${node.handle
                                 }`,
                               // The search API and Gatsby data layer have slightly different images available.
                               images: isDefault ? node.images : [],
