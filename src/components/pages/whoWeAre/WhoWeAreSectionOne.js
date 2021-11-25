@@ -93,12 +93,23 @@ const WhoWeAreSectionOne = () => {
             <Heading1 className="text-center">Quienes <span css={css`border-bottom: 3px solid #1352FF;`}>Somos</span></Heading1>
             <Subtitle className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</Subtitle>
             <div className="w-100 d-flex justify-content-center text-center">
-              <div role="button" aria-labelledby="scroll down button" css={css`cursor: pointer;`} onClick={() => {
-                scroll.scrollTo('chatWithUs', {
-                  duration: 1000,
-                  delay: 100,
-                })
-              }}>
+              <div
+                role="button"
+                tabIndex={0}
+                aria-labelledby="scroll down button"
+                css={css`cursor: pointer;`}
+                onKeyDown={() => {
+                  scroll.scrollTo('chatWithUs', {
+                    duration: 1000,
+                    delay: 100,
+                  })
+                }}
+                onClick={() => {
+                  scroll.scrollTo('chatWithUs', {
+                    duration: 1000,
+                    delay: 100,
+                  })
+                }}>
                 <Image src="/arrow-down.svg" alt="icono de flecha para abajo" />
               </div>
             </div>

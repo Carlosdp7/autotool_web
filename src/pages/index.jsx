@@ -1,7 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
 import { Layout } from "../components/layout"
-import { ProductListing } from "../components/product-listing"
 import HomerHero from "../components/pages/home/HomeHero"
 import HomeSectionTwo from "../components/pages/home/HomeSectionTwo"
 import HomeSectionThree from "../components/pages/home/HomeSectionThree"

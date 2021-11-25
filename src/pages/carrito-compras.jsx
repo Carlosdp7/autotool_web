@@ -53,6 +53,8 @@ export default function CartPage() {
     window.open(checkout.webUrl)
   }
 
+  console.log(checkout);
+
   return (
     <Layout headerNavBg={true}>
       <Section>

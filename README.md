@@ -1,30 +1,15 @@
 <p align="center">
   <a href="https://www.gatsbyjs.com">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+    <img alt="Auto Tool" src="https://autotool.com.co/autotool-black-logo.svg" width="60" />
   </a>
 </p>
 <h1 align="center">
-  Gatsby Starter Shopify
+  Auto Tool Web
 </h1>
 
-Kick off your next [Shopify](https://www.shopify.com/) project with this boilerplate. This starter creates a store with a custom landing page, individual filtered views for each product, detailed product pages, advanced instant search and a shopping cart. All styled with CSS Modules.
+<!-- ## 🚀 Quick start
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.png" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-shopify)
-
-Check out the [demo site](https://shopify-demo.gatsbyjs.com) showcasing a proof-of-concept with 10k products and 30k variants.
-
-## 🚀 Quick start
-
-1.  **Create a Gatsby site.**
-
-    Use the Gatsby CLI to create a new site, specifying the Shopify starter.
-
-    ```shell
-    # create a new Gatsby site using the Shopify starter
-    gatsby new my-shopify-store https://github.com/gatsbyjs/gatsby-starter-shopify
-    ```
+1.  **Clone the repository**
 
 2.  **Link to your store**
 
@@ -115,4 +100,4 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 
 [Build, Deploy, and Host On The Only Cloud Built For Gatsby](https://www.gatsbyjs.com/cloud/)
 
-Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network.
+Gatsby Cloud is an end-to-end cloud platform specifically built for the Gatsby framework that combines a modern developer experience with an optimized, global edge network. -->

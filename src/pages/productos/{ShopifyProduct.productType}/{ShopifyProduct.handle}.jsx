@@ -8,6 +8,7 @@ import { AddToCart } from "../../../components/add-to-cart"
 import { NumericInput } from "../../../components/numeric-input"
 import { formatPrice } from "../../../utils/format-price"
 import { Seo } from "../../../components/seo"
+import parse from "html-react-parser"
 //Bootrstrap
 import { Container, Row, Col, Carousel } from 'react-bootstrap';
 //CSS
@@ -50,7 +51,7 @@ const Heading3 = styled.h3`
   }
 `;
 
-const Description = styled.p`
+const Description = styled.div`
   font-size: 1.2rem;
   color:#181818;
   line-height: 1.8;
@@ -177,7 +178,9 @@ export default function Product({ data: { product, suggestions } }) {
             </Col>
             <Col lg={5} className="mt-5 mt-lg-0">
               <Heading3>Descripción</Heading3>
-              <Description className="mt-3 mb-4">{description}</Description>
+              <Description className="mt-3 mb-4">
+                {parse(product.descriptionHtml)}
+              </Description>
               <NumericInput
                 aria-label="Quantity"
                 onIncrement={() => setQuantity((q) => Math.min(q + 1, 20))}
@@ -220,6 +223,7 @@ export const query = graphql`
   query($id: String!, $productType: String!) {
     product: shopifyProduct(id: { eq: $id }) {
       title
+      descriptionHtml
       description
       productType
       productTypeSlug: gatsbyPath(

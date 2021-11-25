@@ -5,7 +5,6 @@ import { Link } from 'gatsby';
 import { Container, Row, Col } from 'react-bootstrap';
 //CSS
 import styled from '@emotion/styled';
-import { css } from '@emotion/react';
 
 const Section = styled.section`
   padding: 5rem 0;

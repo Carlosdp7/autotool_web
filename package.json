@@ -36,6 +36,7 @@
     "gatsby-source-filesystem": "^3.4.0",
     "gatsby-source-shopify": "^5.0.1",
     "gatsby-transformer-sharp": "^3.4.0",
+    "html-react-parser": "^1.4.0",
     "isomorphic-fetch": "^3.0.0",
     "lodash.debounce": "^4.0.8",
     "lodash.isequal": "^4.5.0",

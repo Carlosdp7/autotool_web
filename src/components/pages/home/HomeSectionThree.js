@@ -1,6 +1,5 @@
 import React from 'react';
 //Components
-import { Link } from 'gatsby';
 //Bootrstrap
 import { Container, Row, Col } from 'react-bootstrap';
 //CSS
