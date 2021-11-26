@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://www.gatsbyjs.com">
+  <a href="https://autotool.com.co/productos/">
     <img alt="Auto Tool" src="https://autotool.com.co/autotool-black-logo.svg" width="60" />
   </a>
 </p>

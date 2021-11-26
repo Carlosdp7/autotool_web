@@ -77,7 +77,7 @@ const HomeSectionTwo = () => {
             <LinkTo to="/nosotros/">Leer más <span className="ms-4">&gt;</span></LinkTo>
           </Col>
           <Col lg={6}>
-            <PrimaryText>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim</PrimaryText>
+            <PrimaryText>Somos una empresa de distribución de servicios, herramientas y repuestos para el sector automotriz.</PrimaryText>
           </Col>
         </Row>
       </Container>

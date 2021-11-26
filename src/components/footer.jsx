@@ -59,7 +59,7 @@ export function Footer() {
             <Col md={4} lg={3} className="text-center text-lg-start">
               <h4 className="mb-4"><BorderBottom>Nosotros</BorderBottom></h4>
               <LinkTo to="/nosotros/">Nosotros</LinkTo>
-              <LinkTo to="/politicas-privacidad/">Politicas de Privacidad</LinkTo>
+              <LinkTo to="/politica-privacidad/">Politicas de Privacidad</LinkTo>
               <LinkTo to="/terminos-condiciones/">Terminos y Condiciones</LinkTo>
             </Col>
           </Row>

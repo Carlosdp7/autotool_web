@@ -42,6 +42,8 @@ const Card = styled(Col)`
   width: 100%;
   background-color: #181818;
   border-radius:14px;
+  height:100%;
+  text-align:center;
 `;
 
 const CardText = styled.p`
@@ -72,22 +74,19 @@ const HomeSectionThree = () => {
           <Col lg={4} className="mb-3">
             <Card className="px-5" css={css`padding-top: 4rem; padding-bottom:4rem;`}>
               <img src="/herramientas-icon.svg" alt="icono de herramientas" />
-              <Heading3>Herramientas</Heading3>
-              <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</CardText>
+              <Heading3>Herramientas <br /> y Equipos</Heading3>
             </Card>
           </Col>
           <Col lg={4} className="mb-3">
             <Card className="px-5" css={css`padding-top: 4rem; padding-bottom:4rem;`}>
               <img src="/maquinas-icon.svg" alt="icono de máquinas" />
-              <Heading3>Máquinas</Heading3>
-              <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</CardText>
+              <Heading3>Servicios</Heading3>
             </Card>
           </Col>
           <Col lg={4} className="mb-3">
             <Card className="px-5" css={css`padding-top: 4rem; padding-bottom:4rem;`}>
               <img src="/repuestos-icon.svg" alt="icono de repuestos" />
-              <Heading3>Repuestos</Heading3>
-              <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut</CardText>
+              <Heading3>Repuestos Automotrices</Heading3>
             </Card>
           </Col>
         </Row>

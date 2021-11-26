@@ -31,7 +31,7 @@ export default function ProductTypeIndex({
 }) {
   return (
     <Layout headerNavBg={true}>
-      <Seo title={`Category: ${productType}`} />
+      <Seo title={`Categoría: ${productType}`} />
       <Section>
         <Container>
           <Row>

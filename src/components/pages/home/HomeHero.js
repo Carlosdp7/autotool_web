@@ -89,8 +89,8 @@ const HomerHero = () => {
         <Row className="h-100 align-items-center gx-0">
           <Col lg={{ span: 5, offset: 1 }}>
             <div css={css`margin-left:-10px;`}>
-              <Heading1>Lorem ipsum dolor sit amet</Heading1>
-              <Subtitle className="mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</Subtitle>
+              <Heading1>Bienvenido a Auto Tool</Heading1>
+              <Subtitle className="mb-5">Venta de equipos, herramientas y consumibles para talleres automotrices al mejor precio.</Subtitle>
               <div>
                 <Link to="/productos">
                   <BlueButton type="button" className="me-5">

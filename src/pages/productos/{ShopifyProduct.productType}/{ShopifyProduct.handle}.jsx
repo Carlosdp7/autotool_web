@@ -32,12 +32,12 @@ const Heading1 = styled.h1`
 `;
 
 const Heading2 = styled.h2`
-  font-size: 1.7rem;
+  font-size: 1.6rem;
   font-weight: 700 !important;
   color:#181818;
 
   @media(min-width: 576px){
-    font-size: 2.3rem;
+    font-size: 2.2rem;
   }
 `;
 
@@ -57,7 +57,7 @@ const Description = styled.div`
   line-height: 1.8;
 
   @media(min-width: 576px){
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 `;
 

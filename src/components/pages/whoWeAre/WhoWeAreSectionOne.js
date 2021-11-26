@@ -91,7 +91,7 @@ const WhoWeAreSectionOne = () => {
         <Row className="h-100 align-items-center justify-content-center">
           <Col xs={11} md={8} xl={6} xxl={5}>
             <Heading1 className="text-center">Quienes <span css={css`border-bottom: 3px solid #1352FF;`}>Somos</span></Heading1>
-            <Subtitle className="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</Subtitle>
+            <Subtitle className="text-center">Empresa automotríz encargada de vender productos y servicios al mejor precio.</Subtitle>
             <div className="w-100 d-flex justify-content-center text-center">
               <div
                 role="button"

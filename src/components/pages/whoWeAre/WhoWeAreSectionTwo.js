@@ -45,19 +45,7 @@ const Heading1 = styled.h1`
 const Paragraph = styled.p`
   font-size: 1rem;
   color: #000000;
-
-  &:nth-of-type(1) { 
-    margin-bottom: 1.2rem;
-
-    @media(min-width: 576px){
-      margin-bottom: 1.5rem;
-    }
-
-    @media(min-width: 992px){
-      margin-bottom: 2.5rem;
-    }
-  }
-
+  text-justify: justify ;
   @media(min-width: 576px){
     font-size: 1.2rem;
   }
@@ -91,8 +79,7 @@ const WhoWeAreSectionTwo = () => {
           <Col lg={{ span: 5, offset: 1 }} css={css`padding-top:10rem;`}>
             <div css={css`margin-left:-10px;`}>
               <Heading1>Auto tool.</Heading1>
-              <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis </Paragraph>
-              <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis </Paragraph>
+              <Paragraph>Es una empresa de distribución de servicios, herramientas y repuestos para el sector automotriz, cuyo principal objetivo es facilitar a nuestros clientes alternativas confiables considerando rentabilidad, calidad, alta seguridad y productos de fàcil manejo con soluciones y asesoria innovadoras.</Paragraph>
             </div>
           </Col>
           <Col lg={6} className="h-100">
@@ -106,8 +93,7 @@ const WhoWeAreSectionTwo = () => {
         <Row>
           <Col xs={12}>
             <Heading1>Auto tool.</Heading1>
-            <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</Paragraph>
-            <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis </Paragraph>
+            <Paragraph>es una empresa de distribución de servicios, herramientas y repuestos para el sector automotriz, cuyo principal objetivo es facilitar a nuestros clientes alternativas confiables considerando rentabilidad, calidad, alta seguridad y productos de fàcil manejo con soluciones y asesoria innovadoras.</Paragraph>
           </Col>
         </Row>
       </Container>
