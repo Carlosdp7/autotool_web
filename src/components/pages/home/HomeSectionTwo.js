@@ -73,7 +73,7 @@ const HomeSectionTwo = () => {
         <Row className="align-items-center gx-0 gx-lg-5">
           <Col lg={6}>
             <TextAboveTitle>Quienes Somos</TextAboveTitle>
-            <Heading2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</Heading2>
+            <Heading2>En Auto Tool te damos los mejores consejos para tu auto</Heading2>
             <LinkTo to="/nosotros/">Leer más <span className="ms-4">&gt;</span></LinkTo>
           </Col>
           <Col lg={6}>
