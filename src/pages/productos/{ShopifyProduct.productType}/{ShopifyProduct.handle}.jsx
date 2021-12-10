@@ -154,7 +154,7 @@ export default function Product({ data: { product, suggestions } }) {
                 {hasImages ? (images.map((image, index) => (
                   <Carousel.Item className="border text-center" key={index}>
                     <GatsbyImage
-                      objectFit="contain"
+                      objectFit="cover"
                       loading={index === 0 ? "eager" : "lazy"}
                       alt={
                         image.altText
