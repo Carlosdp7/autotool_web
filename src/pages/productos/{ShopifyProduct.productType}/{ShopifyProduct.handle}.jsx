@@ -19,6 +19,13 @@ import { ProductCard } from "../../../components/product-card"
 const Section = styled.section`
   padding:4rem 0 6rem 0;
   background-color: #fff;
+
+  .carousel-control-next{
+    justify-content: flex-end !important;
+  } 
+  .carousel-control-prev{
+    justify-content: flex-start !important;
+  }
 `;
 
 const Heading1 = styled.h1`
@@ -151,7 +158,7 @@ export default function Product({ data: { product, suggestions } }) {
               <Heading2>{price}</Heading2>
             </Col>
             <Col lg={7}>
-              <Carousel controls={hasMultiImages} indicators={hasMultiImages} interval={2000} variant="dark" >
+              <Carousel controls={hasMultiImages} indicators={hasMultiImages} interval={2000} variant="dark">
                 {hasImages ? (images.map((image, index) => (
                   <Carousel.Item className="border text-center" key={index}>
                     <GatsbyImage
