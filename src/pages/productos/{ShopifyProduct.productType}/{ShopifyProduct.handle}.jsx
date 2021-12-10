@@ -132,6 +132,7 @@ export default function Product({ data: { product, suggestions } }) {
 
   const hasVariants = variants.length > 1
   const hasImages = images.length > 0
+  const hasMultiImages = images.length > 1
 
   return (
     <Layout headerNavBg={true}>
@@ -150,11 +151,11 @@ export default function Product({ data: { product, suggestions } }) {
               <Heading2>{price}</Heading2>
             </Col>
             <Col lg={7}>
-              <Carousel interval={2000} variant="dark" controls={hasImages} indicators={hasImages}>
+              <Carousel controls={hasMultiImages} indicators={hasMultiImages} interval={2000} variant="dark" >
                 {hasImages ? (images.map((image, index) => (
                   <Carousel.Item className="border text-center" key={index}>
                     <GatsbyImage
-                      objectFit="cover"
+                      objectFit="none"
                       loading={index === 0 ? "eager" : "lazy"}
                       alt={
                         image.altText
