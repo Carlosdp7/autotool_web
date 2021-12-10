@@ -150,7 +150,7 @@ export default function Product({ data: { product, suggestions } }) {
               <Heading2>{price}</Heading2>
             </Col>
             <Col lg={7}>
-              <Carousel interval={2000} variant="dark">
+              <Carousel interval={2000} variant="dark" controls={hasImages} indicators={hasImages}>
                 {hasImages ? (images.map((image, index) => (
                   <Carousel.Item className="border text-center" key={index}>
                     <GatsbyImage
