@@ -115,8 +115,8 @@ const HomerHero = () => {
       <Container className="d-block d-lg-none">
         <Row>
           <Col xs={12} className="pb-5">
-            <Heading1>Lorem ipsum dolor sit amet</Heading1>
-            <Subtitle className="mb-4 mb-sm-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis</Subtitle>
+            <Heading1>Bienvenido a Auto Tool</Heading1>
+            <Subtitle className="mb-4 mb-sm-5">Venta de equipos, herramientas y consumibles para talleres automotrices al mejor precio.</Subtitle>
             <div>
               <Link to="/productos">
                 <BlueButton type="button" className="me-5 mb-3 mb-sm-0">
