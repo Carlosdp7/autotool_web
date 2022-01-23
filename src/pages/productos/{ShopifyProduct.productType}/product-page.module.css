@@ -1,0 +1,15 @@
+.optionsWrapper {
+  display: grid;
+  grid-template-columns: var(--product-grid);
+  gap: var(--space-lg);
+  padding-bottom: var(--space-lg);
+}
+
+.selectVariant {
+  background-color: var(--input-background);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  margin-top: var(--space-md);
+  min-width: 24ch;
+  position: relative;
+}

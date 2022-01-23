@@ -10,11 +10,15 @@ import { formatPrice } from "../../../utils/format-price"
 import { Seo } from "../../../components/seo"
 import parse from "html-react-parser"
 //Bootrstrap
-import { Container, Row, Col, Carousel } from 'react-bootstrap';
+import { Container, Row, Col, Carousel, Form } from 'react-bootstrap';
 //CSS
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 import { ProductCard } from "../../../components/product-card"
+import {
+  optionsWrapper,
+  selectVariant
+} from "./product-page.module.css"
 
 const Section = styled.section`
   padding:4rem 0 6rem 0;
@@ -198,7 +202,26 @@ export default function Product({ data: { product, suggestions } }) {
                 min="1"
                 max="20"
               />
-
+              <fieldset className={optionsWrapper} css={css`margin-top: 1rem;`}>
+                {hasVariants &&
+                  options.map(({ id, name, values }, index) => (
+                    <div className={selectVariant} key={id}>
+                      <Form.Control
+                        css={css`border: 1px solid #181818 !important;`}
+                        as="select"
+                        aria-label="Variants"
+                        onChange={(event) => handleOptionChange(index, event)}
+                      >
+                        <option value="">{`Seleccionar ${name}`}</option>
+                        {values.map((value) => (
+                          <option value={value} key={`${name}-${value}`}>
+                            {value}
+                          </option>
+                        ))}
+                      </Form.Control>
+                    </div>
+                  ))}
+              </fieldset>
               <AddToCart
                 variantId={productVariant.storefrontId}
                 quantity={quantity}
