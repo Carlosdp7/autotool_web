@@ -92,7 +92,7 @@ const HomerHero = () => {
               <Heading1>Bienvenido a Auto Tool</Heading1>
               <Subtitle className="mb-5">Venta de equipos, herramientas y consumibles para talleres automotrices al mejor precio.</Subtitle>
               <div>
-                <Link to="/productos">
+                <Link to="/productos?s=RELEVANCE">
                   <BlueButton type="button" className="me-5">
                     Comprar ahora
                   </BlueButton>
@@ -118,7 +118,7 @@ const HomerHero = () => {
             <Heading1>Bienvenido a Auto Tool</Heading1>
             <Subtitle className="mb-4 mb-sm-5">Venta de equipos, herramientas y consumibles para talleres automotrices al mejor precio.</Subtitle>
             <div>
-              <Link to="/productos">
+              <Link to="/productos?s=RELEVANCE">
                 <BlueButton type="button" className="me-5 mb-3 mb-sm-0">
                   Comprar ahora
                 </BlueButton>

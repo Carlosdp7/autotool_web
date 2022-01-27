@@ -38,7 +38,7 @@ export default function ProductTypeIndex({
             <Col lg={12}>
               <Heading1>{productType}</Heading1>
               <ProductListing products={products.nodes} />
-              <MoreButton to="/productos">
+              <MoreButton to="/productos?s=RELEVANCE">
                 Más Productos
               </MoreButton>
             </Col>

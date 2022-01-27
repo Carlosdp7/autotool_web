@@ -104,7 +104,7 @@ export function Header({ navBg }) {
                 <NavItem to="/">Inicio</NavItem>
                 <NavItem to="/contacto/">Contacto</NavItem>
                 <NavItem to="/nosotros/">Nosotros</NavItem>
-                <NavItem to="/productos">Productos</NavItem>
+                <NavItem to="/productos?s=RELEVANCE">Productos</NavItem>
                 <NavItem to="/servicios/">Servicios</NavItem>
                 <Link to="/carrito-compras" aria-label={`Shopping Cart with ${quantity} items`} css={css`position:relative;`}>
                   <div className="text-center">
